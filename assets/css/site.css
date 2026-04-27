@@ -1,0 +1,260 @@
+/*
+  Research portfolio — shared styles.
+  Open index.html in a browser, or publish this repo as GitHub Pages (Settings → Pages → branch main, /root).
+*/
+
+:root {
+  --text: #1a1a1a;
+  --muted: #5c5c5c;
+  --border: #e0e0e0;
+  --bg: #fafafa;
+  --accent: #1e4d8c;
+  --max: 52rem;
+  --thumb: 11rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+
+.site-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+/* ----- Bio (top) ----- */
+
+.bio {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (min-width: 640px) {
+  .bio {
+    grid-template-columns: min(var(--thumb), 38%) 1fr;
+    gap: 2rem;
+  }
+}
+
+.bio-photo {
+  margin: 0;
+}
+
+.bio-photo img {
+  display: block;
+  width: 100%;
+  max-width: var(--thumb);
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.bio-text h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.bio-text .tagline {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.bio-text p {
+  margin: 0 0 0.85rem;
+}
+
+.bio-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ----- Projects list (newest first) ----- */
+
+.projects-section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.projects-section h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.projects-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.project-row {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+@media (min-width: 560px) {
+  .project-row {
+    grid-template-columns: min(var(--thumb), 34%) 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.project-thumb {
+  display: block;
+  line-height: 0;
+}
+
+.project-thumb img,
+.project-thumb-video {
+  width: 100%;
+  max-width: var(--thumb);
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.project-thumb-video {
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  background: #111;
+}
+
+.project-body h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.project-body h3 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.project-body h3 a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.project-meta {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.project-desc {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--text);
+}
+
+/* ----- Project detail page ----- */
+
+.back-nav {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.article-block {
+  margin-bottom: 2rem;
+}
+
+.article-block:last-child {
+  margin-bottom: 0;
+}
+
+.article-block h1 {
+  margin: 0 0 1rem;
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.article-block p {
+  margin: 0 0 0.85rem;
+}
+
+.article-block p:last-child {
+  margin-bottom: 0;
+}
+
+.video-wrap {
+  margin: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #111;
+}
+
+.video-wrap video {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.embed-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: #000;
+}
+
+.embed-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

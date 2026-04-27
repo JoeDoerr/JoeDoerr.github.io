@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+  Detail page for your newest project (linked from index.html).
+  Flow: intro text → video → text → video → text → video.
+  Video URLs must start with ../assets/ (this file lives in projects/). paths like assets/videos/... would wrongly resolve to projects/assets/...
+  Autoplay: videos use muted+autoplay+playsinline (browser requirement); use controls to unmute / replay.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sequencing Diversified Policy Variants For Targeted Object Retrieval From Cluttered Shelves — Joe H. Doerr</title>
+  <meta name="description" content="Project page — replace title and meta description.">
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-inner">
+      <nav class="back-nav"><a href="../index.html">← Back to home</a></nav>
+
+      <!-- 1) Opening text -->
+      <article class="article-block">
+        <h1>Sequencing Diversified Policy Variants For Targeted Object Retrieval From Cluttered Shelves</h1>
+        <p>After using open loop approaches to object retrieval from shelves, I found that the majority of failures were from the robot being unable to react.
+          Oftentimes the object was easily graspable if it were able to nudge neighboring objects out of the way slightly. Or as it was grasping, the object would slip or be nudged and a simple readjustment would fix it.
+          Other times the object was not in a graspable configuration and a simple reorientation would be the remedy. This experience built my interest in closed loop grasping approaches.
+        </p>
+        <p>Beginning based off of ClutterDexGrasp I was able to recreate their results on MuJoCo with a UR5e with a pinch gripper using FastTD3 and slight changes to their observations and rewards.
+          As I added in a shelf and the goal of not knocking over any object, ClutterDexGrasp's monolithic approach failed almost entirely. 
+          Breaking the task into parts of pushing then grasping with an overhaul of the ClutterDexGrasp training pipeline with new rewards and removing the curriculum allowed it to begin to learn something on this harder setup. 
+          The success rates on individually pushing and grasping only hovered around 60-70%, failing consistently on harder scenes. 
+          After intensively watching the policy failure modes, I thought of the idea of sequencing variants of the policies with mcts on the given scene for both grasping and pushing separately. 
+          This increased success to 95~98% on each scene. 
+        </p>
+        <p>So far the distillation technique from ClutterDexGrasp has not succeeded on this harder long horizon manipulation task that has multiple distinct stages. 
+          We are currently looking to distill a task planner and individual distilled policies for each stage.
+        </p>
+      </article>
+
+      <!-- 2) First video -->
+      <article class="article-block">
+        <!-- Option A: file in the repo (path relative to this HTML file) -->
+        <figure class="video-wrap">
+          <video controls muted autoplay playsinline preload="auto" poster="../assets/images/projects/frontmcts.png">
+            <source src="../assets/videos/mcts_shelf_push_then_grasp_motoman_output.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+        <!-- YouTube alternative: uncomment this block and remove the <figure> above.
+        <div class="embed-wrap">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Video 1" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        -->
+      </article>
+
+      <!-- 3) Text between videos -->
+      <article class="article-block">
+        <p>The above video shows the full pushing mcts output, reset using geometric fabric repulsion then homing to the start pose terms, then grasping mcts output.</p>
+      </article>
+
+      <!-- 4) Second video -->
+      <article class="article-block">
+        <figure class="video-wrap">
+          <video controls muted autoplay playsinline preload="auto">
+            <source src="../assets/videos/mcts_shelf_push_then_grasp_motoman_output_fromside.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </article>
+
+      <!-- 5) More text -->
+      <article class="article-block">
+        <p>Below is the ground truth cropped point cloud we are using to test distillation.</p>
+      </article>
+
+      <!-- 6) Third video -->
+      <article class="article-block">
+        <figure class="video-wrap">
+          <video controls muted autoplay playsinline preload="auto">
+            <source src="../assets/videos/distill.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </article>
+    </div>
+  </header>
+</body>
+</html>

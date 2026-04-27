@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name — Research</title>
+  <meta name="description" content="Research portfolio — replace this text in the head.">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-inner">
+      <!-- ===== BIO: photo + about you ===== -->
+      <section class="bio" aria-labelledby="bio-heading">
+        <figure class="bio-photo">
+          <!-- Put your headshot at assets/images/headshot.jpg or change src below -->
+          <img src="assets/images/headshot.jpg" width="320" height="320" alt="Portrait of Your Name">
+        </figure>
+        <div class="bio-text">
+          <h1 id="bio-heading">Joe H. Doerr</h1>
+          <p class="tagline">PhD Student · Rutgers University, New Brunswick · <a href="mailto:you@example.edu">jhd79@scarletmail.rutgers.edu</a></p>
+          <!-- Short bio paragraphs — edit freely -->
+          <p>I am a PhD student in Computer Science at Rutgers, advised by Professor Kostas Bekris. I am interested in solving difficult robot manipulation problems for practical deployment. I am invested in the direction of robot learning to address these problems, specifically reinforcement learning as it is a compelling path toward scalable robot behavior generation.</p>
+          <p><a href="https://scholar.google.com/citations?user=1OeZRecAAAAJ&hl=en">Google Scholar</a></p>
+        </div>
+      </section>
+
+      <!-- ===== PROJECTS: newest first (first item = most recent) ===== -->
+      <section class="projects-section" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Research projects</h2>
+        <ol class="projects-list">
+          <!-- Project 1 (newest): internal detail page on this site -->
+          <li class="project-row">
+            <a class="project-thumb" href="projects/newest-project.html" aria-label="Project page: teaser video loops muted">
+              <!--
+                Left preview: short loop (MP4/WebM), muted — browsers only allow autoplay when muted.
+                Put a small file in the repo, e.g. assets/videos/project-01-loop.mp4 (a few seconds keeps size down for GitHub).
+                Optional: poster="..." on <video> for the frame shown before load (often same as fallback image).
+                GIF alternative: replace the whole <video> block with <img src="assets/images/projects/teaser.gif" alt="..."> (GIFs autoplay+loop but get huge fast at high res/length).
+              -->
+              <video
+                class="project-thumb-video"
+                muted
+                autoplay
+                loop
+                playsinline
+                preload="metadata"
+                poster="assets/images/projects/frontmcts.png">
+                <source src="assets/videos/mcts_shelf_push_then_grasp_motoman_output.mp4" type="video/mp4">
+                <img src="assets/images/projects/frontmcts.png" width="400" height="300" alt="">
+              </video>
+            </a>
+            <div class="project-body">
+              <h3><a href="projects/newest-project.html">Sequencing Diversified Policy Variants For Targeted Object Retrieval From Cluttered Shelves</a></h3>
+              <p class="project-meta">In preparation for submission to CORL 2026</p>
+              <p class="project-desc">Joe H. Doerr, (other authors order TBD), Kostas E. Bekris</p>
+            </div>
+          </li>
+
+          <!-- Project 2: example of linking out (paper, lab site, GitHub, etc.) -->
+          <li class="project-row">
+            <a class="project-thumb">
+              <img src="assets/images/motionsunburst.png" width="400" height="300" alt="">
+            </a>
+            <div class="project-body">
+              <h3>Robot Motion Generation: Explicit to Implicit Models and Methods</h3>
+              <p class="project-meta">In preparation for submission to IJRR 2026</p>
+              <p class="project-desc">Joe H. Doerr*, Patrick Meng*, Sumanth Tangirala*, Kostas E. Bekris</p>
+            </div>
+          </li>
+
+          <!-- Project 3: duplicate this <li> block to add more rows -->
+          <li class="project-row">
+            <a class="project-thumb" href="https://dhruvmetha.github.io/insert/">
+              <img src="assets/images/Rect_Sim2Real.png" width="400" height="300" alt="">
+            </a>
+            <div class="project-body">
+              <h3><a href="https://dhruvmetha.github.io/insert/">Integrating Model-based Control and RL for Zero-shot Transfer of Tight Insertion Policies</a></h3>
+              <p class="project-meta">Accepted into ICRA 2025</p>
+              <p class="project-desc">Isidoros Marougkas*, Dhruv Metha Ramesh*, Joe H. Doerr, Edgar Granados, Aravind Sivaramakrishnan, Abdeslam Boularias, and Kostas E. Bekris</p>
+            </div>
+          </li>
+
+          <!-- Project 3: duplicate this <li> block to add more rows -->
+          <li class="project-row">
+            <a class="project-thumb" href="https://arxiv.org/pdf/2410.12172">
+              <img src="assets/images/motiongen.png" width="400" height="300" alt="">
+            </a>
+            <div class="project-body">
+              <h3><a href="https://arxiv.org/pdf/2410.12172">The State of Robot Motion Generation</a></h3>
+              <p class="project-meta">Accepted into ISRR 2024</p>
+              <p class="project-desc">Kostas E. Bekris, Joe H. Doerr, Patrick Meng, Sumanth Tangirala</p>
+            </div>
+          </li>
+
+          <!-- Project 3: duplicate this <li> block to add more rows -->
+          <li class="project-row">
+            <a class="project-thumb" href="https://opg.optica.org/abstract.cfm?uri=DH-2022-M6A.2">
+              <img src="assets/images/physical_neural_net.png" width="400" height="300" alt="">
+            </a>
+            <div class="project-body">
+              <h3><a href="https://opg.optica.org/abstract.cfm?uri=DH-2022-M6A.2">Multiplane light conversion design with physical neural network</a></h3>
+              <p class="project-meta">Accepted into Digital Holography and Three-Dimensional Imaging 2022</p>
+              <p class="project-desc">Zheyuan Zhu, Joe H. Doerr, Guifang Li, Shuo Pang</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </header>
+</body>
+</html>
